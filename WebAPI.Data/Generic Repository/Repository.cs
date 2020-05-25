@@ -1,36 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
+using System.Linq;
 using WebAPI.Data.Model;
+using WebAPI.Model.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebAPI.Model.Generic_Repository
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-
+        private readonly APIDataContext _dbContext;
+        private DbSet<T> entities;
+        public Repository(APIDataContext context)
+        {
+            _dbContext = context;
+            entities = context.Set<T>();
+        }
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == null) throw new ArgumentNullException("entity");
+
+            T entity = entities.SingleOrDefault(s => s.id == id);
+            entities.Remove(entity);
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return entities.ToList();
         }
 
-        public T GetById(Guid id)
+        public async Task<T> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await entities.FindAsync(id);
         }
 
         public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            entities.Add(entity);
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            entities.Update(entity);
         }
     }
 }
