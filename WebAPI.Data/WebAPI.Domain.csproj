@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="DataContext\Configurations\" />
-    <Folder Include="Unit Of Work\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,31 +1,38 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
-using WebAPI.Data.Model;
-using WebAPI.Model.DataContext;
-using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using WebAPI.Domain.DataContext;
 
-namespace WebAPI.Model.Generic_Repository
+namespace WebAPI.Domain.Generic_Repository
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    /// <summary>
+    /// Generic repository class that defined operatin related to CRUD
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class Repository<T> : IRepository<T> where T : BaseModel
     {
         private readonly APIDataContext _dbContext;
         private DbSet<T> entities;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Repository1{T}" /> class
+        /// </summary>
+        /// <param name="context"></param>
         public Repository(APIDataContext context)
         {
             _dbContext = context;
             entities = context.Set<T>();
         }
-        public void Delete(Guid id)
+        public void Delete(T entity)
         {
-            if (id == null) throw new ArgumentNullException("entity");
+            //if (id == null) throw new ArgumentNullException("entity");
 
-            T entity = entities.SingleOrDefault(s => s.id == id);
+            //T entity = entities.SingleOrDefault(s => s.id == id);
             entities.Remove(entity);
         }
 
-        public IEnumerable<T> GetAll()
+        public IList<T> GetAll()
         {
             return entities.ToList();
         }

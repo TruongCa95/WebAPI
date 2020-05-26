@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using WebAPI.Data.Model;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace WebAPI.Model.DataContext
+
+namespace WebAPI.Domain.DataContext
 {
-   public class APIDataContext: DbContext
+    public class APIDataContext: DbContext
     {
         public APIDataContext(DbContextOptions options): base(options)
         {

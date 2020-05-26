@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebAPI.Data.Model
+namespace WebAPI.Domain
 {
-   public class User: BaseEntity
+   public class User: BaseModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
