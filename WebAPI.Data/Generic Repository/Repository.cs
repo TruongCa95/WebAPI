@@ -32,9 +32,9 @@ namespace WebAPI.Domain.Generic_Repository
             entities.Remove(entity);
         }
 
-        public IList<T> GetAll()
+        public async Task<IList<T>> GetAll()
         {
-            return entities.ToList();
+            return await entities.ToListAsync();
         }
 
         public async Task<T> GetById(Guid id)

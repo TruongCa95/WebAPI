@@ -11,7 +11,7 @@ namespace WebAPI.Domain.Generic_Repository
     /// <typeparam name="T"></typeparam>
     public interface IRepository<T> where T : BaseModel
     {
-        IList<T> GetAll();
+        Task <IList<T>> GetAll();
         Task<T> GetById(Guid id);
         void Insert(T entity);
         void Update(T entity);

@@ -9,4 +9,8 @@
     <EmbeddedResource Remove="User\**" />
     <None Remove="User\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebAPI.Data\WebAPI.Domain.csproj" />
+  </ItemGroup>
 </Project>
