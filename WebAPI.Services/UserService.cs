@@ -43,9 +43,9 @@ namespace WebAPI.Services
             return userlist;
         }
 
-        public IList<User> GetUsers()
+        public async Task<IList<User>> GetUsers()
         {
-            return  _unitOfWork.UserRepository.GetAll();
+            return await _unitOfWork.UserRepository.GetAll();
         }
 
         public bool IsUserExits(string firstname, string lastname)
