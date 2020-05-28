@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebAPI.Domain.Generic_Repository;
-using WebAPI.Domain.Generic_Repository.Repositories;
-using WebAPI.Domain.Unit_Of_Work;
-using WebAPI.Domain.UnitOfWork;
+using WebAPI.Data;
+using WebAPI.Data.Generic_Repository;
+using WebAPI.Data.Generic_Repository.Repositories;
+using WebAPI.Data.Unit_Of_Work;
+using WebAPI.Data.UnitOfWork;
+using WebAPI.Domain.IdentityServer_4;
 using WebAPI.Services;
 
 namespace WebAPI
@@ -28,6 +30,8 @@ namespace WebAPI
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(Repository<>), typeof(Repository<>));
+
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

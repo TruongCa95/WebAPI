@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace WebAPI.Domain.DataContext
+namespace WebAPI.Data.DataContext
 {
-    public class APIDataContext: IdentityDbContext
+    public class APIDataContext: DbContext
     {
         public APIDataContext(DbContextOptions options): base(options)
         {

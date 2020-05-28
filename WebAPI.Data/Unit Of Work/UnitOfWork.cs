@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WebAPI.Domain.DataContext;
-using WebAPI.Domain.Generic_Repository.Repositories;
-using WebAPI.Domain.Unit_Of_Work;
+using WebAPI.Data.DataContext;
+using WebAPI.Data.Generic_Repository.Repositories;
+using WebAPI.Data.Unit_Of_Work;
 
-namespace WebAPI.Domain.UnitOfWork
+namespace WebAPI.Data.UnitOfWork
 {
     public class UnitOfWork : IDisposable, IUnitOfWork
     {

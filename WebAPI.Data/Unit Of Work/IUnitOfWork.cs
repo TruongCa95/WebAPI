@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using WebAPI.Domain.Generic_Repository.Repositories;
+using WebAPI.Data.Generic_Repository.Repositories;
 
-namespace WebAPI.Domain.Unit_Of_Work
+namespace WebAPI.Data.Unit_Of_Work
 {
     /// <summary>
     /// this is the wraper around repository, this create the instance of the context and retirn the repository called

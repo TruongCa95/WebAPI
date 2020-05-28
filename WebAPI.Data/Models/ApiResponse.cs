@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebAPI.Domain.Models
+namespace WebAPI.Data.Models
 {
    public class ApiResponse<T>
     {

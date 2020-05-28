@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using WebAPI.Domain;
-using WebAPI.Domain.Generic_Repository;
-using WebAPI.Domain.Unit_Of_Work;
+using WebAPI.Data;
+using WebAPI.Data.Generic_Repository;
+using WebAPI.Data.Unit_Of_Work;
 
 namespace WebAPI.Services
 {

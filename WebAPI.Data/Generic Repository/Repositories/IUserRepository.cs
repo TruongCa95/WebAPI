@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebAPI.Domain.Generic_Repository.Repositories
+namespace WebAPI.Data.Generic_Repository.Repositories
 {
    public interface IUserRepository
     {

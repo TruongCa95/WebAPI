@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Logger\" />
-    <Folder Include="IndentityServer\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

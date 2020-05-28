@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPI.Domain.DataContext;
+using WebAPI.Data.DataContext;
 
-namespace WebAPI.Domain.Generic_Repository.Repositories
+namespace WebAPI.Data.Generic_Repository.Repositories
 {
     public class UserRepository : Repository<User>, IUserRepository
     {

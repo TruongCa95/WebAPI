@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebAPI.Domain
+namespace WebAPI.Data
 {
    public class BaseModel
     {

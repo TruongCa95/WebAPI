@@ -1,17 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using WebAPI.Domain.DataContext;
+using WebAPI.Data.DataContext;
 
-namespace WebAPI.Domain.Generic_Repository
+namespace WebAPI.Data.Generic_Repository
 {
     /// <summary>
     /// Generic repository class that defined operatin related to CRUD
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Repository<T> : IRepository<T> where T : BaseModel
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly APIDataContext _dbContext;
         private DbSet<T> entities;
