@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebAPI.Data;
 
 namespace WebAPI.Domain.DataContext.Configurations
 {

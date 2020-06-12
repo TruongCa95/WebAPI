@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using WebAPI.Domain.DataContext.Configurations;
 
 namespace WebAPI.Data.DataContext
 {
@@ -10,7 +10,7 @@ namespace WebAPI.Data.DataContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
         public DbSet<User> Users { get; set; }
     }

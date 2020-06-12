@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebAPI.Data;
+using WebAPI.Data.DataContext;
 using WebAPI.Data.Generic_Repository;
 using WebAPI.Data.Generic_Repository.Repositories;
 using WebAPI.Data.Unit_Of_Work;
 using WebAPI.Data.UnitOfWork;
-using WebAPI.Domain.IdentityServer_4;
 using WebAPI.Services;
 
 namespace WebAPI
@@ -30,8 +31,9 @@ namespace WebAPI
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(Repository<>), typeof(Repository<>));
+            services.AddDbContext<APIDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddIdentityServer();
 
-         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +43,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseIdentityServer();
 
             app.UseHttpsRedirection();
 
